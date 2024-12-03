@@ -3,11 +3,11 @@
       from openai import AzureOpenAI  
       from azure.identity import DefaultAzureCredential, get_bearer_token_provider  
         
-      endpoint = os.getenv("ENDPOINT_URL", "https://demoai0212.openai.azure.com/")
-      deployment = os.getenv("DEPLOYMENT_NAME", "gpt-35-turbo-16k")
+      endpoint = os.getenv("ENDPOINT_URL", "https://demoaiserv0212.openai.azure.com/")
+      deployment = os.getenv("DEPLOYMENT_NAME", "gpt-35-turbo")
         
       # Initialize Azure OpenAI client with Entra ID authentication  
-      cognitiveServicesResource = os.getenv('AZURE_COGNITIVE_SERVICES_RESOURCE', 'YOUR_COGNITIVE_SERVICES_RESOURCE')  
+      cognitiveServicesResource = os.getenv('AZURE_COGNITIVE_SERVICES_RESOURCE', 'Zt8dEJ5kZSpczZwamiKw046jxk0hFNYp8ezWQjbOEBAzSeDPNXYk')  
       token_provider = get_bearer_token_provider(  
           DefaultAzureCredential(),  
           f'{cognitiveServicesResource}.default'  
@@ -25,22 +25,6 @@
     {
         "role": "system",
         "content": "You are an AI assistant that helps people find information."
-    },
-    {
-        "role": "user",
-        "content": "hi"
-    },
-    {
-        "role": "assistant",
-        "content": "Hello! How can I assist you today?"
-    },
-    {
-        "role": "user",
-        "content": "what is paternity leave policy , and just give me the days"
-    },
-    {
-        "role": "assistant",
-        "content": "The paternity leave policy allows all married male permanent employees to avail 7 working days of paternity leave [doc3][doc4]."
     }
 ],  
           past_messages=10,  
